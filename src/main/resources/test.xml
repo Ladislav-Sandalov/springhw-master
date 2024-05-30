@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="test"
+    <bean id="creator"
           class="springhw.Factory.Creator">
     </bean>
 
@@ -33,6 +33,10 @@
 
     <bean id="ReadFileVideoCard"
           class="springhw.Read_File.ReadFileVideoCard">
+    </bean>
+
+    <bean id="Director"
+          class="springhw.Singleton.Director">
     </bean>
 
 

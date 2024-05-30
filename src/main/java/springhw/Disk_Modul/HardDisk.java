@@ -22,27 +22,27 @@ public class HardDisk {
         String StringCount = inputCon.nextLine();
         count = Integer.parseInt(StringCount);
         NameComponents nameComponents = NameComponents.getInstance();
-        Director director = new Director();
+        Director director = ctx.getBean("Director", Director.class);
         if(count == 1){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskManual();
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskOne.getName());
 
         } else if(count == 2){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskManual();
-            diskTwo = new Hard_Disk_Two();
+            diskTwo = ctx.getBean("Hard_Disk_Two", Hard_Disk_Two.class);
             diskTwo.newCreateHardDiskManual();
             nameComponents.addHardDisk(diskOne.getName());
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskTwo.getName());
         }else if(count == 3){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskManual();
-            diskTwo = new Hard_Disk_Two();
+            diskTwo = ctx.getBean("Hard_Disk_Two", Hard_Disk_Two.class);
             diskTwo.newCreateHardDiskManual();
-            diskTree = new Hard_Disk_Tree();
+            diskTree = ctx.getBean("Hard_Disk_Tree", Hard_Disk_Tree.class);
             diskTree.newCreateHardDiskManual();
             nameComponents.addHardDisk(diskOne.getName());
 
@@ -57,27 +57,27 @@ public class HardDisk {
         int randNumb = rand.nextInt(3) + 1;
         count = randNumb;
         NameComponents nameComponents = NameComponents.getInstance();
-        Director director = new Director();
+        Director director = ctx.getBean("Director", Director.class);
         if(count == 1){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskRandom();
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskOne.getName());
         } else if(count == 2){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskRandom();
-            diskTwo = new Hard_Disk_Two();
+            diskTwo = ctx.getBean("Hard_Disk_Two", Hard_Disk_Two.class);
             diskTwo.newCreateHardDiskRandom();
 
             nameComponents.addHardDisk(diskOne.getName());
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskTwo.getName());
         }else if(count == 3){
-            diskOne = new Hard_Disk_One();
+            diskOne = ctx.getBean("Hard_Disk_One", Hard_Disk_One.class);
             diskOne.newCreateHardDiskRandom();
-            diskTwo = new Hard_Disk_Two();
+            diskTwo = ctx.getBean("Hard_Disk_Two", Hard_Disk_Two.class);
             diskTwo.newCreateHardDiskRandom();
-            diskTree = new Hard_Disk_Tree();
+            diskTree = ctx.getBean("Hard_Disk_Tree", Hard_Disk_Tree.class);
             diskTree.newCreateHardDiskRandom();
             nameComponents.addHardDisk(diskOne.getName());
             nameComponents.addHardDisk(diskTwo.getName());
