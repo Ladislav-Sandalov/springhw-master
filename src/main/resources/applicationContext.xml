@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--     создание бинов -->
+    
+    
+    <!-- Инициализация бина через конструктор  -->     
+    <bean id="firstBean" class="springhw.beans.HelloBean">
+        <constructor-arg value="Spring - это интересно!"/>
+    </bean>
+
+    <!-- ************************************************************************************** -->
+
+    <!-- Инициализация бина через сеттер  -->
+	<bean id="secondBean" class="springhw.beans.HelloBean">		
+	        <property name="name" value="Spring - это очень очень интересно!"/>                	        
+    </bean>
+
+	<!-- ************************************************************************************** -->
+
+	<!-- Инициализация бина через фабричный метод  -->
+	<bean id="thirdBean" class="springhw.beans.HelloBean" factory-method="getHelloBean" >
+			<constructor-arg name="name" value="Spring - это очень очень фабрично!"/>	        	        
+    </bean>
+
+    <!-- ************************************************************************************** -->
+
+             
+    <!-- Это бин, содержащий внешний фабричный метод  -->
+ 	<bean id="helloFactory" class="springhw.beans.HelloBeanFactory"/>   
+
+    <!-- Инициализация бина через внешний фабричный метод  factory-bean имеет значение id бина, содержащего внешний фабричный метод -->
+	<bean id="fourthBean" class="springhw.beans.HelloBean" factory-method="getHelloBeanExt" factory-bean="helloFactory" scope="prototype">
+			<constructor-arg name="name" value="Spring - это внешне фабрично!"/>				        	        
+    </bean>
+
+    <!-- ************************************************************************************** -->
+
+</beans>
