@@ -2,9 +2,11 @@ package springhw.Computer;
 
 
 
+
+
+
 import springhw.Confugurator.ComponentManual;
 import springhw.Singleton.NameComponents;
-
 
 import java.io.FileNotFoundException;
 
