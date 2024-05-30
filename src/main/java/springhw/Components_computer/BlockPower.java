@@ -11,12 +11,12 @@ import springhw.Singleton.NameComponents;
 import java.io.FileNotFoundException;
 
 public class BlockPower extends ComponentManual {
-    ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     private String name;
     private int powerMax;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateBlockPowerManual() throws FileNotFoundException {
 
-        ReadFileBlockPower read = ctx.getBean("blockpower", ReadFileBlockPower.class);
+        ReadFileBlockPower read = ctx.getBean("ReadFileBlockPower", ReadFileBlockPower.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
         powerMax = Integer.parseInt(fullName[1].split(" ")[0]);
@@ -25,7 +25,7 @@ public class BlockPower extends ComponentManual {
         System.out.println("Создан блок питания");
     }
     public void newCreateBlockPowerRandom() throws FileNotFoundException {
-        ReadFileBlockPower read = new ReadFileBlockPower();
+        ReadFileBlockPower read = ctx.getBean("ReadFileBlockPower", ReadFileBlockPower.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
         powerMax = Integer.parseInt(fullName[1].split(" ")[0]);

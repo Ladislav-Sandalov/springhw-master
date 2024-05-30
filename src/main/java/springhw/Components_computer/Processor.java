@@ -2,6 +2,7 @@ package springhw.Components_computer;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Confugurator.ComponentManual;
 import springhw.Read_File.ReadFileProcessor;
 import springhw.Singleton.Characteristics;
@@ -15,8 +16,9 @@ public class Processor extends ComponentManual {
     private int countCore;
     private String DDR;
     private int powerMax;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateProcessorManual() throws FileNotFoundException {
-        ReadFileProcessor read = new ReadFileProcessor();
+        ReadFileProcessor read = ctx.getBean("ReadFileProcessor", ReadFileProcessor.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
         socket = fullName[1];
@@ -32,7 +34,7 @@ public class Processor extends ComponentManual {
         System.out.println("Создан процессор");
     }
     public void newCreateProcessorRandom() throws FileNotFoundException {
-        ReadFileProcessor read = new ReadFileProcessor();
+        ReadFileProcessor read = ctx.getBean("ReadFileProcessor", ReadFileProcessor.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
         socket = fullName[1];

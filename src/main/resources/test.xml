@@ -8,51 +8,140 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="creator"
-          class="springhw.Factory.Creator">
+          class="springhw.Factory.Creator"
+          scope = "prototype">
     </bean>
 
     <bean id="ReadFileHardDisk"
-          class="springhw.Read_File.ReadFileHardDisk">
+          class="springhw.Read_File.ReadFileHardDisk"
+          scope = "prototype">
     </bean>
 
     <bean id="ReadFileBlockPower"
-          class="springhw.Read_File.ReadFileBlockPower">
+          class="springhw.Read_File.ReadFileBlockPower"
+          scope = "prototype">
+
     </bean>
 
     <bean id="ReadFileMatherBoard"
-          class="springhw.Read_File.ReadFileMatherBoard">
+          class="springhw.Read_File.ReadFileMatherBoard"
+          scope = "prototype">
     </bean>
 
     <bean id="ReadFileProcessor"
-          class="springhw.Read_File.ReadFileProcessor">
+          class="springhw.Read_File.ReadFileProcessor"
+          scope = "prototype">
     </bean>
 
     <bean id="ReadFileRAM"
-          class="springhw.Read_File.ReadFileRAM">
+          class="springhw.Read_File.ReadFileRAM"
+          scope = "prototype">
     </bean>
 
     <bean id="ReadFileVideoCard"
-          class="springhw.Read_File.ReadFileVideoCard">
+          class="springhw.Read_File.ReadFileVideoCard"
+          scope = "prototype">
     </bean>
 
     <bean id="Director"
-          class="springhw.Singleton.Director">
+          class="springhw.Singleton.Director"
+          scope = "prototype">
     </bean>
 
     <bean id="RAM_One"
-          class="springhw.RAM_Modul.RAM_One">
+          class="springhw.RAM_Modul.RAM_One"
+          scope = "prototype">
+
     </bean>
 
     <bean id="RAM_Two"
-          class="springhw.RAM_Modul.RAM_Two">
+          class="springhw.RAM_Modul.RAM_Two"
+          scope = "prototype">
     </bean>
 
     <bean id="RAM_Tree"
-          class="springhw.RAM_Modul.RAM_Tree">
+          class="springhw.RAM_Modul.RAM_Tree"
+          scope = "prototype">
     </bean>
 
     <bean id="RAM_Four"
-          class="springhw.RAM_Modul.RAM_Four">
+          class="springhw.RAM_Modul.RAM_Four"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Hard_Disk_One"
+          class="springhw.Disk_Modul.Hard_Disk_One"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Hard_Disk_Two"
+          class="springhw.Disk_Modul.Hard_Disk_Two"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Hard_Disk_Tree"
+          class="springhw.Disk_Modul.Hard_Disk_Tree"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Characteristics"
+          class="springhw.Singleton.Characteristics"
+          scope = "prototype">
+    </bean>
+
+    <bean id="NameComponents"
+          class="springhw.Singleton.NameComponents"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Manual"
+          class="springhw.Computer.Manual"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Random"
+          class="springhw.Computer.Random"
+          scope = "prototype">
+    </bean>
+
+    <bean id="BlockPower"
+          class="springhw.Components_computer.BlockPower"
+          scope = "prototype">
+    </bean>
+
+    <bean id="MatherBoard"
+          class="springhw.Components_computer.MatherBoard"
+          scope = "prototype">
+    </bean>
+
+    <bean id="Processor"
+          class="springhw.Components_computer.Processor"
+          scope = "prototype">
+    </bean>
+
+    <bean id="VideoCard"
+          class="springhw.Components_computer.VideoCard"
+          scope = "prototype">
+    </bean>
+
+    <bean id="RAM"
+          class="springhw.RAM_Modul.RAM"
+          scope = "prototype">
+    </bean>
+
+    <bean id="HardDisk"
+          class="springhw.Disk_Modul.HardDisk"
+          scope = "prototype">
+    </bean>
+
+    <bean id="ComponentManual"
+          class="springhw.Confugurator.ComponentManual"
+          scope = "prototype">
+    </bean>
+
+    <bean id="ComponentRandom"
+          class="springhw.Confugurator.ComponentRandom"
+          scope = "prototype">
     </bean>
 
 

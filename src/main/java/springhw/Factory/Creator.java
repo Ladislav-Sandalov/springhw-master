@@ -2,6 +2,7 @@ package springhw.Factory;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Computer.Manual;
 import springhw.Computer.Random;
 import springhw.Singleton.Director;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 
 public class Creator implements ICreator {
     private int count = 0;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void setRequest(){
         System.out.println("Выберите, какой способ сборки компьютера вам подходит:\n" +
                 "0 - Ручной (Каждую деталь нужно выбирать самостоятельно)\n" +
@@ -26,16 +28,15 @@ public class Creator implements ICreator {
         return count;
     }
     public void createComputer() throws FileNotFoundException {
-        NameComponents nameComponents = new NameComponents();
-        Director director = new Director();
+        NameComponents nameComponents = ctx.getBean("NameComponents", NameComponents.class);
+        Director director = ctx.getBean("Director", Director.class);
         if (getCount() == 0){
-            Manual manual = new Manual();
+            Manual manual = ctx.getBean("Manual", Manual.class);
             manual.createManual();
         }
         else if (getCount() == 1){
-            Random random = new Random();
+            Random random = ctx.getBean("Random", Random.class);
             random.createRandom();
-            // Вот тут
         }
     }
 

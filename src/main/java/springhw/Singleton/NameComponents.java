@@ -1,5 +1,7 @@
 package springhw.Singleton;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,10 +13,11 @@ public class NameComponents {
     private String nameProcessor;
     private String nameVideoCard;
     private String[] nameRAM;
+    private static ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     private List<String> nameHardDisk = new ArrayList<String>();
     public static NameComponents getInstance(){
         if(instance == null){
-            instance = new NameComponents();
+            instance = ctx.getBean("NameComponents", NameComponents.class);
         }
         return instance;
     }

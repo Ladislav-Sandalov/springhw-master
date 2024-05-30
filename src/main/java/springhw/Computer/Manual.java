@@ -5,15 +5,16 @@ package springhw.Computer;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Confugurator.ComponentManual;
 import springhw.Singleton.NameComponents;
 
 import java.io.FileNotFoundException;
 
 public class Manual {
-
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void createManual() throws FileNotFoundException {
-        ComponentManual component = new ComponentManual();
+        ComponentManual component = ctx.getBean("ComponentManual", ComponentManual.class);
         component.createProcessor();
         component.createMatherBoard();
         component.createRAM();

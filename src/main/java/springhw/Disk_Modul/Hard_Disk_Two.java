@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 public class Hard_Disk_Two implements IHard_Disk{
     private String name;
     private int memory;
-    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
+    public ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateHardDiskManual() throws FileNotFoundException {
         ReadFileHardDisk read = ctx.getBean("ReadFileHardDisk", ReadFileHardDisk.class);
 //        ReadFileHardDisk read = new ReadFileHardDisk();

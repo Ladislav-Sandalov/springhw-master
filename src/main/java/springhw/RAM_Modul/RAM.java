@@ -16,7 +16,7 @@ public class RAM {
     private RAM_One ramOne = ctx.getBean("RAM_One", RAM_One.class);
     private RAM_Two ramTwo = ctx.getBean("RAM_Two", RAM_Two.class);
     private RAM_Tree ramTree = ctx.getBean("RAM_Tree", RAM_Tree.class);
-    private RAM_Four ramFour = ctx.getBean("RAM_Tree", RAM_Four.class);
+    private RAM_Four ramFour = ctx.getBean("RAM_Four", RAM_Four.class);
 
 
 

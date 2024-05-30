@@ -2,6 +2,7 @@ package springhw.Components_computer;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Confugurator.ComponentManual;
 import springhw.Read_File.ReadFileMatherBoard;
 import springhw.Singleton.Characteristics;
@@ -14,8 +15,9 @@ public class MatherBoard extends ComponentManual {
     private String socket;
     private int countSlot;
     private String DDR;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateMatherBoardManual() throws FileNotFoundException {
-        ReadFileMatherBoard read = new ReadFileMatherBoard();
+        ReadFileMatherBoard read = ctx.getBean("ReadFileMatherBoard", ReadFileMatherBoard.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
         socket = fullName[1];
@@ -28,7 +30,7 @@ public class MatherBoard extends ComponentManual {
         System.out.println("Создана материнская плата");
     }
     public void newCreateMatherBoardRandom() throws FileNotFoundException {
-        ReadFileMatherBoard read = new ReadFileMatherBoard();
+        ReadFileMatherBoard read = ctx.getBean("ReadFileMatherBoard", ReadFileMatherBoard.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
         socket = fullName[1];

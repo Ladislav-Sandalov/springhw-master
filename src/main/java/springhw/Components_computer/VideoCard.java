@@ -2,6 +2,7 @@ package springhw.Components_computer;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Confugurator.ComponentManual;
 import springhw.Read_File.ReadFileVideoCard;
 import springhw.Singleton.Characteristics;
@@ -13,8 +14,9 @@ public class VideoCard extends ComponentManual {
     private String name;
     private int videoRAM;
     private int powerMax = 0;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateVideoCardManual() throws FileNotFoundException {
-        ReadFileVideoCard read = new ReadFileVideoCard();
+        ReadFileVideoCard read = ctx.getBean("ReadFileVideoCard", ReadFileVideoCard.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
         videoRAM = Integer.parseInt(fullName[1].split(" ")[0]);
@@ -27,7 +29,7 @@ public class VideoCard extends ComponentManual {
     }
 
     public void newCreateVideoCardRandom() throws FileNotFoundException {
-        ReadFileVideoCard read = new ReadFileVideoCard();
+        ReadFileVideoCard read = ctx.getBean("ReadFileVideoCard", ReadFileVideoCard.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
         videoRAM = Integer.parseInt(fullName[1].split(" ")[0]);
