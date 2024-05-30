@@ -2,6 +2,7 @@ package springhw.RAM_Modul;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Singleton.Characteristics;
 import springhw.Singleton.NameComponents;
 
@@ -11,10 +12,12 @@ import java.util.Scanner;
 
 public class RAM {
     private int countRam;
-    private RAM_One ramOne = new RAM_One();
-    private RAM_Two ramTwo = new RAM_Two();
-    private RAM_Tree ramTree = new RAM_Tree();
-    private RAM_Four ramFour = new RAM_Four();
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
+    private RAM_One ramOne = ctx.getBean("RAM_One", RAM_One.class);
+    private RAM_Two ramTwo = ctx.getBean("RAM_Two", RAM_Two.class);
+    private RAM_Tree ramTree = ctx.getBean("RAM_Tree", RAM_Tree.class);
+    private RAM_Four ramFour = ctx.getBean("RAM_Tree", RAM_Four.class);
+
 
 
     public void CountSlotRamManual() throws FileNotFoundException {

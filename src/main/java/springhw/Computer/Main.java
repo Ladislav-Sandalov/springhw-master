@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
-        Creator creator = ctx.getBean("test", Creator.class);
+        Creator creator = ctx.getBean("creator", Creator.class);
         creator.setRequest();
         creator.createComputer();
     }
