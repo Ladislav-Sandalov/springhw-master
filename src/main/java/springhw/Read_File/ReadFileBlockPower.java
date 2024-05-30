@@ -2,7 +2,9 @@ package springhw.Read_File;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Singleton.Characteristics;
+import springhw.Singleton.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,7 +16,11 @@ import java.util.Scanner;
 public class ReadFileBlockPower {
     private List<String> blockPower = new ArrayList<String>();
     private int count;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
+    private String method = "ReadFileBlockPower()";
     public ReadFileBlockPower() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        logger.Start(method);
         FileReader fileBlockPower = new FileReader("C:/files/BlockPower.txt");
         Scanner readPower = new Scanner(fileBlockPower);
         Characteristics characteristics = Characteristics.getInstance();
@@ -26,9 +32,10 @@ public class ReadFileBlockPower {
             temp_powerMax = Integer.parseInt(temp_line.split(";")[1].split(" ")[0]);
             if(temp_powerMax > powerMax) {
                 blockPower.add(temp_line);
+
             }
         }
-
+        logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

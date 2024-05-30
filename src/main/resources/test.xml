@@ -48,6 +48,11 @@
           scope = "prototype">
     </bean>
 
+    <bean id="Director"
+          class="springhw.Singleton.Director"
+          scope = "prototype">
+    </bean>
+
     <bean id="RAM_One"
           class="springhw.RAM_Modul.RAM_One"
           scope = "prototype">
@@ -144,6 +149,9 @@
           scope = "prototype">
     </bean>
 
-
+    <bean id="Logger"
+          class="springhw.Singleton.Logger"
+          scope = "prototype">
+    </bean>
 
 </beans>
