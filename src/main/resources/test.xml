@@ -39,5 +39,22 @@
           class="springhw.Singleton.Director">
     </bean>
 
+    <bean id="RAM_One"
+          class="springhw.RAM_Modul.RAM_One">
+    </bean>
+
+    <bean id="RAM_Two"
+          class="springhw.RAM_Modul.RAM_Two">
+    </bean>
+
+    <bean id="RAM_Tree"
+          class="springhw.RAM_Modul.RAM_Tree">
+    </bean>
+
+    <bean id="RAM_Four"
+          class="springhw.RAM_Modul.RAM_Four">
+    </bean>
+
+
 
 </beans>

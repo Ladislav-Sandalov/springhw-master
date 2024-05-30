@@ -2,6 +2,8 @@ package springhw.RAM_Modul;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import springhw.Read_File.ReadFileHardDisk;
 import springhw.Read_File.ReadFileRAM;
 
 import java.io.FileNotFoundException;
@@ -10,8 +12,9 @@ public class RAM_Four {
     private String name;
     private int countMemory;
     private String DDR;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void createRamFourManual() throws FileNotFoundException {
-        ReadFileRAM read = new ReadFileRAM();
+        ReadFileRAM read = ctx.getBean("ReadFileRAM", ReadFileRAM.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
         countMemory = Integer.parseInt(fullName[1].split(" ")[0]);
@@ -19,7 +22,7 @@ public class RAM_Four {
 
     }
     public void createRamFourRandom() throws FileNotFoundException {
-        ReadFileRAM read = new ReadFileRAM();
+        ReadFileRAM read = ctx.getBean("ReadFileRAM", ReadFileRAM.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
         countMemory = Integer.parseInt(fullName[1].split(" ")[0]);
