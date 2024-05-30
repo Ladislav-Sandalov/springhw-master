@@ -2,6 +2,7 @@ package springhw.Disk_Modul;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Singleton.Director;
 import springhw.Singleton.NameComponents;
 
@@ -14,6 +15,7 @@ public class HardDisk {
     private Hard_Disk_Two diskTwo;
     private Hard_Disk_Tree diskTree;
     private int count;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateHardDiskManual() throws FileNotFoundException {
         System.out.println("Сколько дисков вы хотите добавить(1, 2, 3): ");
         Scanner inputCon = new Scanner(System.in);
