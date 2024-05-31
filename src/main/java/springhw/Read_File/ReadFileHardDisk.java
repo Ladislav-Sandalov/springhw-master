@@ -1,5 +1,8 @@
 package springhw.Read_File;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import springhw.Singleton.Logger;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -11,13 +14,18 @@ public class ReadFileHardDisk {
     private List<String> hardDisk = new ArrayList<String>();
 
     private int count;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileHardDisk() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "ReadFileHardDisk()";
+        logger.Start(method);
         FileReader fileHardDisk = new FileReader("C:/files/HardDisk.txt");
         Scanner readDisk = new Scanner(fileHardDisk);
         while(readDisk.hasNextLine()){
             hardDisk.add(readDisk.nextLine());
         }
+        logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

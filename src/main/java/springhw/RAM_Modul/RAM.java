@@ -4,6 +4,7 @@ package springhw.RAM_Modul;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Singleton.Characteristics;
+import springhw.Singleton.Logger;
 import springhw.Singleton.NameComponents;
 
 import java.io.FileNotFoundException;
@@ -21,6 +22,9 @@ public class RAM {
 
 
     public void CountSlotRamManual() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "CountSlotRamManual()";
+        logger.Start(method);
         Characteristics characteristics = Characteristics.getInstance();
         countRam = characteristics.getCountSlot();
         NameComponents nameComponents = NameComponents.getInstance();
@@ -117,9 +121,13 @@ public class RAM {
             }
         }
         System.out.println("Создана ОЗУ");
+        logger.End(method);
     }
 
     public void CountSlotRamRandom() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "CountSlotRamRandom()";
+        logger.Start(method);
         Characteristics characteristics = Characteristics.getInstance();
         countRam = characteristics.getCountSlot();
         NameComponents nameComponents = NameComponents.getInstance();
@@ -161,6 +169,7 @@ public class RAM {
         }
 
         System.out.println("Создана ОЗУ");
+        logger.End(method);
     }
 
 

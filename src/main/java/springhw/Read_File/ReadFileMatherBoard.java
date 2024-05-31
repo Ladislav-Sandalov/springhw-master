@@ -2,7 +2,9 @@ package springhw.Read_File;
 
 
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Singleton.Characteristics;
+import springhw.Singleton.Logger;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,8 +17,12 @@ public class ReadFileMatherBoard {
     private List<String> matherBoard = new ArrayList<String>();
 
     private int count;
+    private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileMatherBoard() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "ReadFileMatherBoard()";
+        logger.Start(method);
         FileReader fileMatherBoard = new FileReader("C:/files/MatherBoard.txt");
         Scanner readBoard = new Scanner(fileMatherBoard);
         String temp_line;
@@ -33,6 +39,7 @@ public class ReadFileMatherBoard {
                 matherBoard.add(temp_line);
             }
         }
+        logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import springhw.Confugurator.ComponentManual;
 import springhw.Read_File.ReadFileMatherBoard;
 import springhw.Singleton.Characteristics;
+import springhw.Singleton.Logger;
 import springhw.Singleton.NameComponents;
 
 import java.io.FileNotFoundException;
@@ -17,6 +18,9 @@ public class MatherBoard extends ComponentManual {
     private String DDR;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateMatherBoardManual() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "newCreateMatherBoardManual()";
+        logger.Start(method);
         ReadFileMatherBoard read = ctx.getBean("ReadFileMatherBoard", ReadFileMatherBoard.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
@@ -28,8 +32,12 @@ public class MatherBoard extends ComponentManual {
         NameComponents nameComponents = NameComponents.getInstance();
         nameComponents.setNameMatherBoard(name);
         System.out.println("Создана материнская плата");
+        logger.End(method);
     }
     public void newCreateMatherBoardRandom() throws FileNotFoundException {
+        Logger logger = ctx.getBean("Logger", Logger.class);
+        String method = "newCreateMatherBoardRandom()";
+        logger.Start(method);
         ReadFileMatherBoard read = ctx.getBean("ReadFileMatherBoard", ReadFileMatherBoard.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
@@ -41,6 +49,7 @@ public class MatherBoard extends ComponentManual {
         NameComponents nameComponents = NameComponents.getInstance();
         nameComponents.setNameMatherBoard(name);
         System.out.println("Создана материнская плата");
+        logger.End(method);
     }
 
     public String getName() {
