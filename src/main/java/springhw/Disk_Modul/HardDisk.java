@@ -18,9 +18,9 @@ public class HardDisk {
     private int count;
     public ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateHardDiskManual() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "newCreateHardDiskManual()";
-        logger.Start(method);
+        //logger.Start(method);
         System.out.println("Сколько дисков вы хотите добавить(1, 2, 3): ");
         Scanner inputCon = new Scanner(System.in);
         String StringCount = inputCon.nextLine();
@@ -54,12 +54,12 @@ public class HardDisk {
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskTree.getName());
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public void newCreateHardDiskRandom() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "newCreateHardDiskRandom()";
-        logger.Start(method);
+        //logger.Start(method);
         Random rand = new Random();
         int randNumb = rand.nextInt(3) + 1;
         count = randNumb;
@@ -91,6 +91,6 @@ public class HardDisk {
             nameComponents.addObserver(director);
             nameComponents.addHardDisk(diskTree.getName());
         }
-        logger.End(method);
+        //logger.End(method);
     }
 }

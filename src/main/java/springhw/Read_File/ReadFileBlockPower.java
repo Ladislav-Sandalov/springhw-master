@@ -20,8 +20,8 @@ public class ReadFileBlockPower {
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileBlockPower() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
-        logger.Start(method);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
+        //logger.Start(method);
         FileReader fileBlockPower = new FileReader("C:/files/BlockPower.txt");
         Scanner readPower = new Scanner(fileBlockPower);
         Characteristics characteristics = Characteristics.getInstance();
@@ -36,7 +36,7 @@ public class ReadFileBlockPower {
 
             }
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

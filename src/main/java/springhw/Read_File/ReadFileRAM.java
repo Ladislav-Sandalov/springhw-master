@@ -20,9 +20,9 @@ public class ReadFileRAM {
     private int count;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public ReadFileRAM() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
 
-        logger.Start(method);
+        //logger.Start(method);
         FileReader fileRAM = new FileReader("C:/files/RAM.txt");
         Scanner readRAM = new Scanner(fileRAM);
         String temp_line;
@@ -36,7 +36,7 @@ public class ReadFileRAM {
                 RAM.add(temp_line);
             }
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

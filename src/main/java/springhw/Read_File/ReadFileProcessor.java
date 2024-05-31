@@ -18,15 +18,15 @@ public class ReadFileProcessor {
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileProcessor() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
 
-        logger.Start(method);
+        //logger.Start(method);
         FileReader fileProcessor = new FileReader("C:/files/Processor.txt");
         Scanner readProc = new Scanner(fileProcessor);
         while(readProc.hasNextLine()){
             proc.add(readProc.nextLine());
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

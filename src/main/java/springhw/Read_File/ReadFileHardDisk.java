@@ -18,15 +18,15 @@ public class ReadFileHardDisk {
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileHardDisk() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
 
-        logger.Start(method);
+        //logger.Start(method);
         FileReader fileHardDisk = new FileReader("C:/files/HardDisk.txt");
         Scanner readDisk = new Scanner(fileHardDisk);
         while(readDisk.hasNextLine()){
             hardDisk.add(readDisk.nextLine());
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

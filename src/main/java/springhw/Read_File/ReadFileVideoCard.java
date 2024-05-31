@@ -17,14 +17,14 @@ public class ReadFileVideoCard {
     private int count;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public ReadFileVideoCard() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
-        logger.Start(method);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
+        //logger.Start(method);
         FileReader fileVideoCard = new FileReader("C:/files/VideoCard.txt");
         Scanner readVideo = new Scanner(fileVideoCard);
         while(readVideo.hasNextLine()){
             videoCard.add(readVideo.nextLine());
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;

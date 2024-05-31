@@ -19,9 +19,9 @@ public class Processor extends ComponentManual {
     private int powerMax;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public void newCreateProcessorManual() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "newCreateProcessorManual()";
-        logger.Start(method);
+        //logger.Start(method);
         ReadFileProcessor read = ctx.getBean("ReadFileProcessor", ReadFileProcessor.class);
         String[] fullName = read.ManualInput().split(";");
         name = fullName[0];
@@ -36,12 +36,12 @@ public class Processor extends ComponentManual {
         NameComponents nameComponents = NameComponents.getInstance();
         nameComponents.setNameProcessor(name);
         System.out.println("Создан процессор");
-        logger.End(method);
+        //logger.End(method);
     }
     public void newCreateProcessorRandom() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "newCreateProcessorRandom()";
-        logger.Start(method);
+        //logger.Start(method);
         ReadFileProcessor read = ctx.getBean("ReadFileProcessor", ReadFileProcessor.class);
         String[] fullName = read.RandomInput().split(";");
         name = fullName[0];
@@ -56,7 +56,7 @@ public class Processor extends ComponentManual {
         NameComponents nameComponents = NameComponents.getInstance();
         nameComponents.setNameProcessor(name);
         System.out.println("Создан процессор");
-        logger.End(method);
+        //logger.End(method);
     }
 
     public String getName() {

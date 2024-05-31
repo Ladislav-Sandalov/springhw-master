@@ -22,9 +22,9 @@ public class RAM {
 
 
     public void CountSlotRamManual() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "CountSlotRamManual()";
-        logger.Start(method);
+        //logger.Start(method);
         Characteristics characteristics = Characteristics.getInstance();
         countRam = characteristics.getCountSlot();
         NameComponents nameComponents = NameComponents.getInstance();
@@ -121,13 +121,13 @@ public class RAM {
             }
         }
         System.out.println("Создана ОЗУ");
-        logger.End(method);
+        //logger.End(method);
     }
 
     public void CountSlotRamRandom() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
         String method = "CountSlotRamRandom()";
-        logger.Start(method);
+        //logger.Start(method);
         Characteristics characteristics = Characteristics.getInstance();
         countRam = characteristics.getCountSlot();
         NameComponents nameComponents = NameComponents.getInstance();
@@ -169,7 +169,7 @@ public class RAM {
         }
 
         System.out.println("Создана ОЗУ");
-        logger.End(method);
+        //logger.End(method);
     }
 
 

@@ -21,9 +21,9 @@ public class ReadFileMatherBoard {
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
 
     public ReadFileMatherBoard() throws FileNotFoundException {
-        Logger logger = ctx.getBean("Logger", Logger.class);
+        //Logger logger = ctx.getBean("Logger", Logger.class);
 
-        logger.Start(method);
+        //logger.Start(method);
         FileReader fileMatherBoard = new FileReader("C:/files/MatherBoard.txt");
         Scanner readBoard = new Scanner(fileMatherBoard);
         String temp_line;
@@ -40,7 +40,7 @@ public class ReadFileMatherBoard {
                 matherBoard.add(temp_line);
             }
         }
-        logger.End(method);
+        //logger.End(method);
     }
     public String ManualInput(){
         int i = 0;
