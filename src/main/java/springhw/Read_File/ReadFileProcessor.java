@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileProcessor {
+    String method = "ReadFileProcessor()";
     private List<String> proc = new ArrayList<String>();
 
     private int count;
@@ -18,7 +19,7 @@ public class ReadFileProcessor {
 
     public ReadFileProcessor() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
-        String method = "ReadFileProcessor()";
+
         logger.Start(method);
         FileReader fileProcessor = new FileReader("C:/files/Processor.txt");
         Scanner readProc = new Scanner(fileProcessor);

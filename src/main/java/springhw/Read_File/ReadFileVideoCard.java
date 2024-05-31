@@ -12,12 +12,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileVideoCard {
+    String method = "ReadFileVideoCard()";
     private List<String> videoCard = new ArrayList<String>();
     private int count;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public ReadFileVideoCard() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
-        String method = "ReadFileVideoCard()";
         logger.Start(method);
         FileReader fileVideoCard = new FileReader("C:/files/VideoCard.txt");
         Scanner readVideo = new Scanner(fileVideoCard);

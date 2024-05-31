@@ -14,13 +14,14 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileRAM {
+    String method = "ReadFileRAM()";
     private List<String> RAM = new ArrayList<String>();
 
     private int count;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
     public ReadFileRAM() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
-        String method = "ReadFileRAM()";
+
         logger.Start(method);
         FileReader fileRAM = new FileReader("C:/files/RAM.txt");
         Scanner readRAM = new Scanner(fileRAM);

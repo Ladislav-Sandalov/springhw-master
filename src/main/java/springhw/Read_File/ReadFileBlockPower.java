@@ -14,10 +14,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileBlockPower {
+    private String method = "ReadFileBlockPower()";
     private List<String> blockPower = new ArrayList<String>();
     private int count;
     private ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("test.xml");
-    private String method = "ReadFileBlockPower()";
+
     public ReadFileBlockPower() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
         logger.Start(method);

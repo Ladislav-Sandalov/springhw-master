@@ -14,6 +14,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileMatherBoard {
+    String method = "ReadFileMatherBoard()";
     private List<String> matherBoard = new ArrayList<String>();
 
     private int count;
@@ -21,7 +22,7 @@ public class ReadFileMatherBoard {
 
     public ReadFileMatherBoard() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
-        String method = "ReadFileMatherBoard()";
+
         logger.Start(method);
         FileReader fileMatherBoard = new FileReader("C:/files/MatherBoard.txt");
         Scanner readBoard = new Scanner(fileMatherBoard);

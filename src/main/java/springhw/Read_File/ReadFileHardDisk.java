@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ReadFileHardDisk {
+    String method = "ReadFileHardDisk()";
     private List<String> hardDisk = new ArrayList<String>();
 
     private int count;
@@ -18,7 +19,7 @@ public class ReadFileHardDisk {
 
     public ReadFileHardDisk() throws FileNotFoundException {
         Logger logger = ctx.getBean("Logger", Logger.class);
-        String method = "ReadFileHardDisk()";
+
         logger.Start(method);
         FileReader fileHardDisk = new FileReader("C:/files/HardDisk.txt");
         Scanner readDisk = new Scanner(fileHardDisk);
