@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 @EnableAspectJAutoProxy
 public class Logger {
-    @Pointcut("execution(* Components_computer..*(..))")
+    @Pointcut("execution(* springhw.Read_File..*(..))")
     public void allMethodsIn() {}
 
         @Before("allMethodsIn()")
